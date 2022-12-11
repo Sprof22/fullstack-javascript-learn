@@ -1,16 +1,19 @@
 // 1. Create a multidimensional array to hold quiz questions and answers
-const main = document.querySelector('main')
+const heading = document.querySelector('h1')
 const questionsAnswer = [
   ['How old am I?','26'],
-   ['What is my First Name?','Richmond'],
-   ['What is the name of my girlfriend?','Sarah'],
-   ['What is the fastest land animal?','cheetah'],
+  ['What is my First Name?','Richmond'],
+  ['What is the name of my girlfriend?','Sarah'],
+  ['What is the fastest land animal?','cheetah'],
   
 ]
+
+correctMain = document.getElementById('correct');
+incorrectMain = document.getElementById('incorrect');
   
   
 // 2. Store the number of questions answered correctly
-let correct = 0;
+let correctNum = 0;
 //  if(answer.toLowerCase ß=== questionsAnswer.toLowerCase){
 //    correct++
 //  }
@@ -27,13 +30,18 @@ let correct = 0;
     let question = questionsAnswer[i][0];
     let answer = questionsAnswer[i][1];
     let response = prompt(question);
-    if(response[i].toLowerCase === answer.toLowerCase){
-      correct++;
+    let correct = [];
+    let incorrect = [];
+    if(response.toLowerCase() === answer.toLowerCase()){
+      correctNum++;
+
+      correct.push(question)
+    } else{
+      incorrect.push(question)
     }
     
-
-
-
+console.log(correct, "these are correct");
+console.log(incorrect, "these are incorrect");
   }
 
 
@@ -41,4 +49,5 @@ let correct = 0;
 
 // 4. Display the number of correct answers to the user
 
-main.innerHTML = `<h1>Congratulations, you got ${correct} questions correctly</h1>`
+heading.innerHTML = `<h4>Congratulations, you got ${correctNum} questions correctly</h4>
+<h2>You got these correct:</h2>`
