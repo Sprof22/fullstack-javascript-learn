@@ -57,6 +57,4 @@ main.innerHTML = `<h1>Congratulations, you got ${correctNum} questions correctly
 <ol>${createListItem(correct)}</ol>
 <h2>These answers were incorrect: </h2>
 <ol>${createListItem(incorrect)}</ol>
-
-
 `;
