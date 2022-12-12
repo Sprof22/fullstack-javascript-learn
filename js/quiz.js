@@ -1,19 +1,16 @@
 // 1. Create a multidimensional array to hold quiz questions and answers
-const heading = document.querySelector('h1')
 const questionsAnswer = [
-  ['How old am I?','26'],
-  ['What is my First Name?','Richmond'],
-  ['What is the name of my girlfriend?','Sarah'],
-  ['What is the fastest land animal?','cheetah'],
-  
-]
+  ["How old am I?", "26"],
+  ["What is my First Name?", "Richmond"],
+  ["What is the name of my girlfriend?", "Sarah"],
+  ["What is the fastest land animal?", "cheetah"],
+];
 
-correctMain = document.getElementById('correct');
-incorrectMain = document.getElementById('incorrect');
-  
-  
+const main = document.querySelector('main');
 // 2. Store the number of questions answered correctly
 let correctNum = 0;
+let correct = [];
+  let incorrect = [];
 //  if(answer.toLowerCase ß=== questionsAnswer.toLowerCase){
 //    correct++
 //  }
@@ -25,29 +22,41 @@ let correctNum = 0;
       - If the response matches the answer, the number of correctly
         answered questions increments by 1
 */
-  
-  for (let i=0; i<questionsAnswer.length; i++){
-    let question = questionsAnswer[i][0];
-    let answer = questionsAnswer[i][1];
-    let response = prompt(question);
-    let correct = [];
-    let incorrect = [];
-    if(response.toLowerCase() === answer.toLowerCase()){
-      correctNum++;
 
-      correct.push(question)
-    } else{
-      incorrect.push(question)
-    }
-    
-console.log(correct, "these are correct");
-console.log(incorrect, "these are incorrect");
+for (let i = 0; i < questionsAnswer.length; i++) {
+  let question = questionsAnswer[i][0];
+  let answer = questionsAnswer[i][1];
+  let response = prompt(question);
+  
+  if (response.toLowerCase() === answer.toLowerCase()) {
+    correctNum++;
+
+    correct.push(question);
+  } else {
+    incorrect.push(question);
   }
 
+  console.log(correct, "these are correct");
+  console.log(incorrect, "these are incorrect");
+}
 
+function createListItem(arr){
+ let items = '';
+ for (let i=0; i<arr.length; i++){
+  items += `<li>${arr[i]}</li>`;
+ }
 
+ return items;
 
+}
+console.log( createListItem(correct), "just checking")
 // 4. Display the number of correct answers to the user
 
-heading.innerHTML = `<h4>Congratulations, you got ${correctNum} questions correctly</h4>
-<h2>You got these correct:</h2>`
+main.innerHTML = `<h1>Congratulations, you got ${correctNum} questions correctly</h1>
+<h2>You got these correct: </h2>
+<ol>${createListItem(correct)}</ol>
+<h2>These answers were incorrect: </h2>
+<ol>${createListItem(incorrect)}</ol>
+
+
+`;
