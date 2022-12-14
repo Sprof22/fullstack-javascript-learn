@@ -1,9 +1,11 @@
 const btnUpdate = document.getElementById('btn-main')
 const headline = document.getElementById('headline');
 const items = document.getElementsByTagName('li');
-const highlights = document.getElementsByClassName('highlights')
+const highlights = document.getElementsByClassName('highlight')
 
-
+for (const beans of highlights){
+    beans.style.backgroundColor = 'cornsilk'
+}
 
 for(let i = 0; i<items.length; i++){
     items[i].style.color = 'orchid'
