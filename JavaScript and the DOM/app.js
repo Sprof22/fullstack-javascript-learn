@@ -1,18 +1,11 @@
-const btnUpdate = document.getElementById('btn-main')
-const headline = document.getElementById('headline');
-const items = document.getElementsByTagName('li');
-const highlights = document.getElementsByClassName('highlight')
+const btnUpdate = document.querySelector('.btn-main');
 
-for (const beans of highlights){
-    beans.style.backgroundColor = 'cornsilk'
-}
-
-for(let i = 0; i<items.length; i++){
-    items[i].style.color = 'orchid'
-}
 
 btnUpdate.addEventListener('click', () => {
-    headline.style.border = 'solid 2px red';
-    headline.style.fontSize = '80px';
+ const headline = document.getElementById('headline');
+ const input = document.querySelector('.input-main');
+
+heading.textContent = input.value
+input.value = '';
 });
 
