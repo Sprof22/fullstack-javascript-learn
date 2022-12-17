@@ -12,10 +12,12 @@ btnUpdate.addEventListener('click', () => {
 
 btnToggle.addEventListener('click', () => {
     const listContainer = document.querySelector('.list-container');
-    if(listContainer.style.display === 'block'){
-        listContainer.style.display = 'none'
+    if(listContainer.style.display === 'none'){
+        listContainer.style.display = 'block';
+        btnToggle.textContent = 'Show List';
     }   else {
-        listContainer.style.display = 'block'
+        listContainer.style.display = 'none';
+        btnToggle.textContent = 'Hide List';
     };
 })
 // btnUpdate.addEventListener('click', () => {
