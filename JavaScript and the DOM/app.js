@@ -1,13 +1,17 @@
-const btnUpdate = document.querySelector('.btn-main');
+const btnCreate = document.querySelector('.btn-main');
 const btnToggle = document.querySelector('.btn-toggle')
 console.log('we here')
 
-btnUpdate.addEventListener('click', () => {
-    const headline = document.getElementById('headline');
+btnCreate.addEventListener('click', () => {
     const input = document.querySelector('.input-main');
+    const item = document.createElement('li');
+    const list = document.querySelector('ul');
+    item.textContent = input.value;
 
-    headline.textContent = input.value;
-    input.value= '';
+    list.append(item);
+
+
+    input.value = '';
 });
 
 btnToggle.addEventListener('click', () => {
