@@ -4,11 +4,8 @@ console.log('we here')
 
 btnCreate.addEventListener('click', () => {
     const input = document.querySelector('.input-main');
-    const item = document.createElement('li');
     const list = document.querySelector('ul');
-    item.textContent = input.value;
 
-    list.append(item);
 
 
     input.value = '';
