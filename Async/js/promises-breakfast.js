@@ -4,4 +4,4 @@ const breakfastPromise = new Promise ((resolve, reject) => {
     }, 3000);
 });
 
-breakfastPromise.then(val => console.log(val))
+console.log(breakfastPromise);
