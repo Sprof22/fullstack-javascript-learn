@@ -5,13 +5,20 @@ const form = document.querySelector('form');
 // ------------------------------------------
 //  FETCH FUNCTIONS
 // ------------------------------------------
-fetch('')
-
+fetch('https://dog.ceo/api/breeds/image/random')
+    .then(response => response.json())
+    .then(data => generateImage(data.message))
 
 // ------------------------------------------
 //  HELPER FUNCTIONS
 // ------------------------------------------
-
+    function generateImage(data) {
+        const html = `
+            <img src='${data}' alt>
+            <p>Click to view of images of ${select.value}s</p>
+        `;
+        card.innerHTML = html;
+    }
 
 
 // ------------------------------------------
