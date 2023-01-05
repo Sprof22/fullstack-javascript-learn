@@ -5,13 +5,15 @@ const form = document.querySelector('form');
 // ------------------------------------------
 //  FETCH FUNCTIONS
 // ------------------------------------------
+function fetchData(url){
+    return fetch(url)
+        .then(res => res.json)()
+}
 
-fetch('https://dog.ceo/api/breeds/list')
-.then(response => response.json())
+fetchData('https://dog.ceo/api/breeds/list')
 .then(data => generateOptions(data.message))
 
-fetch('https://dog.ceo/api/breeds/image/random')
-    .then(response => response.json())
+fetchData('https://dog.ceo/api/breeds/image/random')
     .then(data => generateImage(data.message))
 
 // ------------------------------------------
