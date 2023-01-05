@@ -22,7 +22,7 @@ fetch('https://dog.ceo/api/breeds/image/random')
             <option value='${item}'>${item}</option>
         `);
         select.innerHTML = options;
-    }
+    }g
 
 
     function generateImage(data) {
