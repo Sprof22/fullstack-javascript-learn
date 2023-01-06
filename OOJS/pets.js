@@ -4,4 +4,3 @@ const myString = {
     console.log(this.string.split(' ').length)
   }
 }
-
