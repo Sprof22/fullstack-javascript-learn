@@ -6,3 +6,7 @@ class Pet {
 
     }
 }
+
+const ernie = new Pet('lion', 2, 'wolf');
+
+console.log(ernie.animal);
