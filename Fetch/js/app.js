@@ -74,10 +74,25 @@ fetchData('https://dog.ceo/api/breeds/image/random')
 //  EVENT LISTENERS
 // ------------------------------------------
 select.addEventListener('change', fetchBreedImage);
-card.addEventListener('click', fetchBreedImage)
+card.addEventListener('click', fetchBreedImage);
+form.addEventListener('submit', postData);
 
-console.log('i am ready')
 // ------------------------------------------
 //  POST DATA
 // ------------------------------------------
+function postData(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
 
+    fetch('https://jsonplaceholder.typicode.com/comments',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name: name, comment: comment})
+    })
+    .then(checkStatus)
+    .then(res => res.json())
+    .then(data => console.log(data))
+}
