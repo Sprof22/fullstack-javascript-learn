@@ -9,7 +9,7 @@ function fetchData(url) {
     return fetch(url)
         .then(checkStatus)
         .then(res => res.json())
-        .catch(error => console.log('Looks like there was a problem'), error)
+        .catch(error => console.log('Looks like there was a problem', error))
 }
 
 Promise.all([
@@ -85,13 +85,16 @@ function postData(e) {
     const name = document.getElementById('name').value;
     const comment = document.getElementById('comment').value;
 
-    fetch('https://jsonplaceholder.typicode.com/comments',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name: name, comment: comment})
-    })
+    const config = 
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name: name, comment: comment})
+        }
+
+    fetch('https://jsonplaceholder.typicode.com/comments', config)
     .then(checkStatus)
     .then(res => res.json())
     .then(data => console.log(data))
