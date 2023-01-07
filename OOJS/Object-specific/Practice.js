@@ -13,4 +13,4 @@ class User {
 var user1 = new User('JavaScriptStudent@teamtreehouse.com', 'TreehouseStudent2', '1/08/1991');
 
 user1.changeUsername();
-console.log(user1, 'this good')
+console.log(user1, 'this good');
